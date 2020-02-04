@@ -10,7 +10,7 @@ import {map} from 'rxjs/operators';
 })
 export class EventsService {
 
-  private baseUrl = 'http://www.panasonic-products.com/api/events';
+  private baseUrl = 'https://www.panasonic-products.com/api/events';
 
   constructor(private http: HttpClient) {
   }

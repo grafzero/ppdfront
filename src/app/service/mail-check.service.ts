@@ -8,7 +8,7 @@ import {Observable} from 'rxjs';
 })
 export class MailCheckService {
 
-  private baseUrl = 'http://www.panasonic-products.com/api/checkEmail';
+  private baseUrl = 'https://www.panasonic-products.com/api/checkEmail';
 
   constructor(private http: HttpClient) {
   }

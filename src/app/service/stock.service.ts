@@ -8,7 +8,7 @@ import {Stock} from '../model/stock';
 })
 export class StockService {
 
-  private baseUrl = 'http://www.panasonic-products.com/api/stocks';
+  private baseUrl = 'https://www.panasonic-products.com/api/stocks';
 
   constructor(private http: HttpClient) {
   }

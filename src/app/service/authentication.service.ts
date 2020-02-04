@@ -14,7 +14,7 @@ export class AuthenticationService {
   authenticate(username, password) {
     const headers = new HttpHeaders({Authorization: 'Basic ' + btoa(username + ':' + password)});
 
-    const userObservable = this.httpClient.get<User>('http://www.panasonic-products.com/api/user', {headers}).pipe(
+    const userObservable = this.httpClient.get<User>('https://www.panasonic-products.com/api/user', {headers}).pipe(
       map(
         userData => {
           sessionStorage.setItem('username', username);
