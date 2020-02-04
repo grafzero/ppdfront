@@ -1,0 +1,52 @@
+<div class="container">
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h2>Events</h2>
+    </div>
+    <div class="card">
+      <div class="card-body">
+        <div class="btn-group" role="group" aria-label="...">
+          <button class="btn" [ngClass]="{'btn-warning': checkingMail, 'btn-secondary': !checkingMail}"
+                  (click)="startMailCheck()">
+            <span *ngIf="!checkingMail; else elseBlock">Check for stocks</span>
+            <ng-template #elseBlock><span>Checking.......</span></ng-template>
+          </button>
+
+          <button class="btn btn-primary" (click)="getByEventType('STOCK_HANDLING')">Stock events</button>
+          <button class="btn btn-primary" (click)="getByEventType('PRODUCT_REQUEST_WEB')">Web events</button>
+          <button class="btn btn-primary" (click)="getByEventType('SCHEDULED_PROCESS_STARTED')">Scheduled events</button>
+          <button class="btn btn-success" (click)="reloadData()">All events</button>
+        </div>
+
+      </div>
+    </div>
+    <div class="panel-body">
+
+
+      <table class="table table-striped table-bordered">
+        <thead>
+        <tr>
+          <th>Id</th>
+          <th>Type</th>
+          <th>Details</th>
+          <th>Created</th>
+          <th>ip</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr *ngFor="let event of events">
+          <td>{{event.id}}</td>
+          <td>{{event.eventType}}</td>
+          <td>{{event.details}}</td>
+          <td>{{event.formatedDate}}</td>
+          <td>{{event.ipAddress}}
+            <!--          <button class="btn-danger" (click)="deleteEmployee(employee.id)">Delete</button>-->
+            <!--          <button class="btn-info" (click)="deleteEmployee(employee.id)">Update</button>-->
+
+          </td>
+        </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

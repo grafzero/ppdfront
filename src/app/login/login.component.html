@@ -1,0 +1,15 @@
+<div class="container">
+  <div class="loginInputs">
+    User Name : <input type="text" name="username" [(ngModel)]="username">
+    Password : <input type="password" name="password" [(ngModel)]="password">
+  </div>
+  <button (click)=checkLogin() class="btn btn-success">
+    Login
+  </button>
+
+  <hr>
+  <div *ngIf="invalidLogin" class="alert alert-danger alert-dismissible fade show" role="alert">
+    Invalid login
+  </div>
+
+</div>
